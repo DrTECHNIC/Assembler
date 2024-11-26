@@ -116,6 +116,18 @@ pytest -v pytest_interpreter.py
 
 ### [Тестовая программа](https://github.com/DrTECHNIC/Assembler/blob/main/program.asm)
 
+**Входные данные:**
+
+**A** = (2, 3, 4, 5, 6, 7)
+
+**B** = (3, 2, 5, 3, 2, 1)
+
+**Выходные данные:**
+
+**A** = (2, 3, 4, 5, 6, 7)
+
+**B** = (8, 9, 1024, 125, 36, 7)
+
 ```
 LOAD 2 0 2
 LOAD 2 1 3
@@ -133,8 +145,8 @@ LOAD 2 11 1
 
 POW 49 6 6 0
 POW 49 7 7 1
-POW 49 8 9 2
-POW 49 9 0 3
+POW 49 8 8 2
+POW 49 9 9 3
 POW 49 10 10 4
 POW 49 11 11 5
 ```
@@ -152,8 +164,8 @@ POW 49 11 11 5
 	<register address="5">7</register>
 	<register address="6">8</register>
 	<register address="7">9</register>
-	<register address="8">5</register>
-	<register address="9">1024</register>
+	<register address="8">1024</register>
+	<register address="9">125</register>
 	<register address="10">36</register>
 	<register address="11">7</register>
 </result>
