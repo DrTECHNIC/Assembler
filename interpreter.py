@@ -34,7 +34,7 @@ class Interpreter:
 
     def load(self):
         B = self.byte_code & ((1 << 4) - 1); self.byte_code >>= 4
-        C = self.byte_code & ((1 << 28) - 1); self.byte_code >>= 29
+        C = self.byte_code & ((1 << 27) - 1); self.byte_code >>= 29
         if not (self.boundaries[0] <= B <= self.boundaries[1]):
             raise ValueError("В бинарном файле присутствуют невалидные данные: обращение к ячейки памяти по адресу вне диапазона")
         self.registers[B] = C
@@ -42,7 +42,7 @@ class Interpreter:
     def read(self):
         B = self.byte_code & ((1 << 15) - 1); self.byte_code >>= 15
         C = self.byte_code & ((1 << 4) - 1); self.byte_code >>= 4
-        D = self.byte_code & ((1 << 4) - 1); self.byte_code >>= 9
+        D = self.byte_code & ((1 << 4) - 1); self.byte_code >>= 6
         if not (self.boundaries[0] <= C <= self.boundaries[1]):
             raise ValueError("В бинарном файле присутствуют невалидные данные: обращение к ячейки памяти по адресу вне диапазона")
         if not (self.boundaries[0] <= D <= self.boundaries[1]):
