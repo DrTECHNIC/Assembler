@@ -73,7 +73,7 @@ class Assembler:
 
     def write(self, A, B, C):
         if A != 5: raise ValueError("Параметр А должен быть равен 5")
-        if not (0 <= B < (1 << 7)): raise ValueError("Адрес B должен быть в пределах от 0 до 127 (2^7-1)")
+        if not (0 <= B < (1 << 4)): raise ValueError("Адрес B должен быть в пределах от 0 до 15 (2^4-1)")
         if not (0 <= C < (1 << 32)): raise ValueError("Адрес C должен быть в пределах от 0 до 4294967295 (2^32-1)")
         bits = (C << 11) | (B << 7) | A
         bits = bits.to_bytes(6, byteorder="little")
